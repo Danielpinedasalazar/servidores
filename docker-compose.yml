@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - '8050:8050'
+    environment:
+      - DB_URL=sqlite:////data/items.db
+    volumes:
+      - items_data:/data
+    restart: unless-stopped # arranca automáticamente con el sistema
+
+volumes:
+  items_data:
