@@ -7,15 +7,14 @@ services:
       - DB_URL=sqlite:////data/items.db
     volumes:
       - items_data:/data
-    restart: unless-stopped # arranca automáticamente con el sistema
-  
+    restart: unless-stopped
+
   web:
     image: nginx:latest
     container_name: nginx_service
     restart: always
     ports:
-      - "8080:80"
-
+      - '8080:80'
 
 volumes:
   items_data:

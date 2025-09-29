@@ -11,7 +11,7 @@ def create_many_items(
         item = models.Item(
             name=p.name,
             price=p.price,
-            created_at=p.created_at,  # si viene None, DB usará NOW()
+            created_at=p.created_at,
         )
         db.add(item)
         items.append(item)

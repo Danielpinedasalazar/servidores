@@ -21,10 +21,8 @@ def get_db():
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # == reemplaza a @app.on_event("startup") ==
     Base.metadata.create_all(bind=engine)
     yield
-    # opcional: lógica de shutdown aquí (cerrar conexiones, limpiar, etc.)
 
 
 app = FastAPI(title="Items API", version="1.0.0", lifespan=lifespan)
