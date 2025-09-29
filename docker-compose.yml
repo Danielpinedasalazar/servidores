@@ -8,6 +8,14 @@ services:
     volumes:
       - items_data:/data
     restart: unless-stopped # arranca automáticamente con el sistema
+  
+  web:
+    image: nginx:latest
+    container_name: nginx_service
+    restart: always
+    ports:
+      - "8080:80"
+
 
 volumes:
   items_data:
